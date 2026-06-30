@@ -50,3 +50,10 @@
   - Phân tích và tổ chức cấu trúc thư mục tiêu chuẩn với `components/` và `services/`.
 - **Next up:** Dựng Component `DepartmentList` giao diện tĩnh với Table Bootstrap (Tiếp tục Module 1).
 
+### 01/07/2026
+- **Task hoàn thành:** Render danh sách phòng ban (DepartmentList) với dữ liệu tĩnh (mock data).
+- **Key Takeaways/Bug fixes:** 
+  - Fix lỗi cú pháp Octal literal trong JS (không dùng số `0` ở đầu số đếm thông thường).
+  - Hiểu cách dùng `Array.map()` kết hợp với JSX để hiển thị danh sách (List).
+  - Nắm được tầm quan trọng của thuộc tính `key` (giống như CCCD) giúp React định danh phần tử, tối ưu Virtual DOM và tránh bug hiển thị sai dữ liệu.
+- **Next up:** Tích hợp Bootstrap để làm đẹp giao diện bảng (Table Layout).
