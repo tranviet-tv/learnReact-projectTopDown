@@ -31,6 +31,10 @@ Markdown
 - **Next up:** [Nhiệm vụ tiếp theo trong Roadmap]
 Continue the Roadmap (Chuyển tiếp lộ trình):
 
+Sau khi cập nhật xong file tiến độ. hãy hiển thị ở đoạn chat commit gợi ý để tôi có thể tạo commit và push lên git để ghi nhận tiến độ và lưu trữ lại phần code đã học.
+
 Chủ động đưa ra bài học/nhiệm vụ của phần tiếp theo dựa trên "Next up".
+
+
 
 Luôn giữ phương pháp học Top-Down: Bắt đầu bằng bài toán thực tế, sau đó mới giải thích lý thuyết cần thiết để giải quyết bài toán đó.

@@ -3,10 +3,10 @@
 ## 🎯 DANH SÁCH MODULE (CHECKLIST)
 
 ### 🟢 PHẦN 1: NỀN TẢNG CƠ BẢN (DỄ)
-- [ ] **Module 1: Khởi động, UI tĩnh & Fetch API đơn lẻ**
+- [x] **Module 1: Khởi động, UI tĩnh & Fetch API đơn lẻ**
   - [x] Tổ chức kiến trúc dự án phân lớp cơ bản.
   - [x] Dựng giao diện tĩnh (Table) bằng Bootstrap và CSS thuần.
-  - [ ] Gọi API lấy danh sách phòng ban từ JSON-Server.
+  - [x] Gọi API lấy danh sách phòng ban từ JSON-Server.
 - [ ] **Module 2: Trạng thái UI & Kỹ thuật Map Dữ liệu**
   - [ ] Hiển thị chữ "Đang tải..." và "Lỗi".
   - [ ] Gọi API Employees và kết nối dữ liệu ID.
@@ -72,3 +72,11 @@
   - Hiểu được mục đích của JSON-Server trong việc tạo Fake REST API phục vụ cho quá trình phát triển Front-end khi chưa có Back-end thật.
   - Cấu trúc cơ bản của file `db.json` như một cơ sở dữ liệu.
 - **Next up:** Khởi động JSON-Server, học về Hook `useEffect` và Fetch API (hoặc Axios) để lấy dữ liệu từ `db.json` hiển thị lên giao diện.
+
+### 02/07/2026
+- **Task hoàn thành:** Khởi động JSON-Server và dùng Fetch API kết nối dữ liệu thật lên giao diện.
+- **Key Takeaways/Bug fixes:**
+  - Nắm vững bản chất của `useState` (bộ nhớ, kích hoạt re-render) và `useEffect` (kẻ làm việc ngoài lề, gọi API 1 lần duy nhất sau render).
+  - Khắc phục các lỗi cú pháp phổ biến của người mới: quên import hooks, viết sai mảng destructuring `[state, setState]`, đặt sai vị trí mảng phụ thuộc `[]` của `useEffect`.
+  - Hiểu vòng đời cơ bản của component (Render rỗng -> Chạy Effect Fetch API -> Có data đẩy vào State -> Re-render có dữ liệu).
+- **Next up:** (Module 2) - Bắt đầu xử lý trạng thái Loading (Đang tải...) và Error (Lỗi) để nâng cao UX, trước khi chuyển sang gọi API bảng Nhân viên.
