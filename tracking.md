@@ -5,7 +5,7 @@
 ### 🟢 PHẦN 1: NỀN TẢNG CƠ BẢN (DỄ)
 - [ ] **Module 1: Khởi động, UI tĩnh & Fetch API đơn lẻ**
   - [x] Tổ chức kiến trúc dự án phân lớp cơ bản.
-  - [ ] Dựng giao diện tĩnh (Table) bằng Bootstrap và CSS thuần.
+  - [x] Dựng giao diện tĩnh (Table) bằng Bootstrap và CSS thuần.
   - [ ] Gọi API lấy danh sách phòng ban từ JSON-Server.
 - [ ] **Module 2: Trạng thái UI & Kỹ thuật Map Dữ liệu**
   - [ ] Hiển thị chữ "Đang tải..." và "Lỗi".
@@ -57,3 +57,18 @@
   - Hiểu cách dùng `Array.map()` kết hợp với JSX để hiển thị danh sách (List).
   - Nắm được tầm quan trọng của thuộc tính `key` (giống như CCCD) giúp React định danh phần tử, tối ưu Virtual DOM và tránh bug hiển thị sai dữ liệu.
 - **Next up:** Tích hợp Bootstrap để làm đẹp giao diện bảng (Table Layout).
+
+### 01/07/2026 (Tiếp tục)
+- **Task hoàn thành:** Hoàn thiện giao diện Table với Bootstrap và chuẩn hóa cấu trúc JSX.
+- **Key Takeaways/Bug fixes:** 
+  - Hiểu rõ sự khác biệt giữa `class` (HTML) và `className` (React JSX).
+  - Nắm vững cấu trúc semantic HTML của một Table (`<table>`, `<thead>`, `<tbody>`, `<tr>`).
+  - Biết cách áp dụng các class Bootstrap (`table`, `table-striped`, `table-bordered`, `table-dark`) để thiết kế giao diện bảng chuyên nghiệp.
+- **Next up:** Cài đặt JSON-Server để tạo API giả, dùng useEffect gọi API lấy dữ liệu thật.
+
+### 01/07/2026 (Cuối ngày)
+- **Task hoàn thành:** Cài đặt JSON-Server và tạo Mock Database (`db.json`).
+- **Key Takeaways/Bug fixes:** 
+  - Hiểu được mục đích của JSON-Server trong việc tạo Fake REST API phục vụ cho quá trình phát triển Front-end khi chưa có Back-end thật.
+  - Cấu trúc cơ bản của file `db.json` như một cơ sở dữ liệu.
+- **Next up:** Khởi động JSON-Server, học về Hook `useEffect` và Fetch API (hoặc Axios) để lấy dữ liệu từ `db.json` hiển thị lên giao diện.

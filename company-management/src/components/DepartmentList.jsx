@@ -10,19 +10,23 @@ export default function DepartmentList() {
     return (
         <div>
             <h2>Danh sách phòng ban</h2>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Ten phong ban</th>
-                    <th>Quan ly phong ban</th>
-                </tr>
-                {mockDepartments.map((department) => (
+            <table className="table table-striped table-bordered">
+                <thead className="table-dark">
                     <tr>
-                        <td>{department.id}</td>
-                        <td>{department.name}</td>
-                        <td>{department.managerId}</td>
+                        <th>ID</th>
+                        <th>Ten phong ban</th>
+                        <th>Quan ly phong ban</th>
                     </tr>
-                ))}
+                </thead>
+                <tbody>
+                    {mockDepartments.map((department) => (
+                        <tr key={department.id}>
+                            <td>{department.id}</td>
+                            <td>{department.name}</td>
+                            <td>{department.managerId}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
         </div>
     )
