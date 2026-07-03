@@ -38,6 +38,7 @@ export default function EmployeeList() {
                         <th>Ten nhan vien</th>
                         <th>Gioi tinh</th>
                         <th>Phong ban</th>
+                        <th>Hành động</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,9 @@ export default function EmployeeList() {
                             <td>{employee.empName?.firstName + ' ' + employee.empName?.lastName}</td>
                             <td>{employee.empGender}</td>
                             <td>{getDepartmentName(employee.depId)}</td>
+                            <td>
+                                <button className="btn btn-primary">View</button>
+                            </td>
                         </tr>
                     )}
                 </tbody>

@@ -96,3 +96,10 @@
   - Hiểu cách dùng `?.` (Optional Chaining) để bảo vệ ứng dụng khỏi crash.
   - Sử dụng mảng phụ (`departments`) làm "từ điển" để tìm và map `depId` thành tên phòng ban.
 - **Next up:** Xử lý nút "View" để ẩn/hiện thông tin người phụ thuộc (Module 3).
+
+### 03/07/2026 (Tạm dừng)
+- **Task hoàn thành:** Làm đẹp bảng EmployeeList bằng Bootstrap và chuẩn bị UI cho nút "View" (Bắt đầu Module 3).
+- **Key Takeaways/Bug fixes:**
+  - Chủ động áp dụng các class CSS (`table-striped`, `table-dark`, `btn-primary`) để giao diện chuyên nghiệp hơn.
+  - Hiểu được bài toán quản lý trạng thái trong danh sách: Cần một state lưu ID (`selectedEmpId`) thay vì cờ boolean thông thường để xác định chính xác dòng nào đang được tương tác.
+- **Next up:** Tiếp tục Module 3: Gắn sự kiện `onClick` cho nút View, cập nhật state `selectedEmpId` và hiển thị danh sách người phụ thuộc thả xuống.
