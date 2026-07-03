@@ -5,6 +5,7 @@ export default function App() {
         <>
             <h1>Quản lý công ty</h1>
             <DepartmentList />
+            <EmployeeList />
         </>
     )
 }

@@ -7,9 +7,9 @@
   - [x] Tổ chức kiến trúc dự án phân lớp cơ bản.
   - [x] Dựng giao diện tĩnh (Table) bằng Bootstrap và CSS thuần.
   - [x] Gọi API lấy danh sách phòng ban từ JSON-Server.
-- [ ] **Module 2: Trạng thái UI & Kỹ thuật Map Dữ liệu**
+- [x] **Module 2: Trạng thái UI & Kỹ thuật Map Dữ liệu**
   - [x] Hiển thị chữ "Đang tải..." và "Lỗi".
-  - [ ] Gọi API Employees và kết nối dữ liệu ID.
+  - [x] Gọi API Employees và kết nối dữ liệu ID.
 - [ ] **Module 3: Tương tác sự kiện & Render có điều kiện**
   - [ ] Xử lý nút "View" hiện danh sách thả xuống.
   - [ ] Ẩn/hiện thông tin phụ thuộc theo dữ liệu.
@@ -88,3 +88,11 @@
   - Nắm được kỹ thuật dùng `.finally()` trong Promise để luôn tắt cờ `isLoading` bất chấp API thành công hay thất bại.
   - Áp dụng kỹ thuật **"Early Return"** để render giao diện có điều kiện (Conditional Rendering) một cách gọn gàng, tránh lồng `if/else` phức tạp.
 - **Next up:** Gọi API Employees (Nhân viên) và hiển thị danh sách Nhân viên (Module 2).
+
+### 03/07/2026 (Tiếp tục)
+- **Task hoàn thành:** Hiển thị danh sách Nhân viên và map dữ liệu ID phòng ban.
+- **Key Takeaways/Bug fixes:**
+  - Nắm vững cách truy cập object lồng nhau (nested object) trong JSX.
+  - Hiểu cách dùng `?.` (Optional Chaining) để bảo vệ ứng dụng khỏi crash.
+  - Sử dụng mảng phụ (`departments`) làm "từ điển" để tìm và map `depId` thành tên phòng ban.
+- **Next up:** Xử lý nút "View" để ẩn/hiện thông tin người phụ thuộc (Module 3).
