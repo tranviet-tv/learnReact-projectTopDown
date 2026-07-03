@@ -1,4 +1,5 @@
 import DepartmentList from "./components/DepartmentList";
+import EmployeeList from "./components/EmployeeList";
 
 export default function App() {
     return (

@@ -31,8 +31,8 @@ export default function EmployeeList() {
     return (
         <div>
             <h2>Danh sách nhân viên</h2>
-            <table>
-                <thead>
+            <table className="table table-striped table-bordered">
+                <thead className="table-dark">
                     <tr>
                         <th>ID</th>
                         <th>Ten nhan vien</th>
