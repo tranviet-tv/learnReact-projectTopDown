@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 export default function DepartmentList() {
 
     const [departments, setDepartments] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetch('http://localhost:8000/departments')
@@ -11,9 +13,13 @@ export default function DepartmentList() {
                 setDepartments(data);
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
+            .finally(() => setIsLoading(false))
     }, []);
+
+    if (isLoading) return <p className="text-info">Loading departments...</p>
+    if (error) return <p className="text-danger">Error: {error}</p>
 
     return (
         <div>
