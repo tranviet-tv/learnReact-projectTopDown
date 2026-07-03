@@ -8,7 +8,7 @@
   - [x] Dựng giao diện tĩnh (Table) bằng Bootstrap và CSS thuần.
   - [x] Gọi API lấy danh sách phòng ban từ JSON-Server.
 - [ ] **Module 2: Trạng thái UI & Kỹ thuật Map Dữ liệu**
-  - [ ] Hiển thị chữ "Đang tải..." và "Lỗi".
+  - [x] Hiển thị chữ "Đang tải..." và "Lỗi".
   - [ ] Gọi API Employees và kết nối dữ liệu ID.
 - [ ] **Module 3: Tương tác sự kiện & Render có điều kiện**
   - [ ] Xử lý nút "View" hiện danh sách thả xuống.
@@ -80,3 +80,11 @@
   - Khắc phục các lỗi cú pháp phổ biến của người mới: quên import hooks, viết sai mảng destructuring `[state, setState]`, đặt sai vị trí mảng phụ thuộc `[]` của `useEffect`.
   - Hiểu vòng đời cơ bản của component (Render rỗng -> Chạy Effect Fetch API -> Có data đẩy vào State -> Re-render có dữ liệu).
 - **Next up:** (Module 2) - Bắt đầu xử lý trạng thái Loading (Đang tải...) và Error (Lỗi) để nâng cao UX, trước khi chuyển sang gọi API bảng Nhân viên.
+
+### 03/07/2026
+- **Task hoàn thành:** Xử lý trạng thái Loading và Error khi fetch API.
+- **Key Takeaways/Bug fixes:**
+  - Hiểu cách dùng `useState` để lưu trữ thêm cờ trạng thái `isLoading` và `error`.
+  - Nắm được kỹ thuật dùng `.finally()` trong Promise để luôn tắt cờ `isLoading` bất chấp API thành công hay thất bại.
+  - Áp dụng kỹ thuật **"Early Return"** để render giao diện có điều kiện (Conditional Rendering) một cách gọn gàng, tránh lồng `if/else` phức tạp.
+- **Next up:** Gọi API Employees (Nhân viên) và hiển thị danh sách Nhân viên (Module 2).
