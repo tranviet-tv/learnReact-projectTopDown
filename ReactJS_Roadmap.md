@@ -1,199 +1,106 @@
-# 🚀 LỘ TRÌNH HỌC REACTJS THỰC CHIẾN (CHIA NHỎ MODULE)
-**Dự án:** Hệ thống Quản lý Công ty (Company Management)
-**Công nghệ chính:** ReactJS, JSON-Server (Mô phỏng REST API).
+# 🚀 LỘ TRÌNH HỌC REACTJS THỰC CHIẾN CHO DỰ ÁN CUỐI KỲ
+**Dự án:** Hệ thống Quản lý Nhà hàng (Restaurant Management)
+**Công nghệ chính:** ReactJS, React-Bootstrap, JSON-Server (Mô phỏng REST API), Jest & React Testing Library.
 
 ---
 
-## 🟢 PHẦN 1: NỀN TẢNG CƠ BẢN (DỄ)
+## 🟢 PHẦN 1: NỀN TẢNG CƠ BẢN
 
 ### 🚩 Module 1: Khởi động, UI tĩnh & Fetch API đơn lẻ
-*Bắt đầu nhẹ nhàng bằng việc hiển thị giao diện tĩnh và lấy 1 danh sách dữ liệu đầu tiên.*
+*Bắt đầu nhẹ nhàng bằng việc xây dựng cấu trúc dự án và hiển thị giao diện tĩnh.*
 
 - **Mục tiêu:** 
-  - Tổ chức kiến trúc dự án phân lớp cơ bản.
-  - Dựng giao diện tĩnh (Table) bằng **Bootstrap** và **CSS thuần**.
-  - Gọi API lấy danh sách phòng ban từ JSON-Server và hiển thị lên bảng.
+  - Tổ chức kiến trúc dự án phân lớp cơ bản (components, pages, api, context, reducer).
+  - Dựng giao diện tĩnh sử dụng các component của **React-Bootstrap** (`<Container>`, `<Row>`, `<Col>`, `<Card>`).
+  - Gọi API lấy danh sách dữ liệu từ JSON-Server và hiển thị lên UI.
 - **Kiến thức cần học:**
   - Khởi tạo dự án (Vite).
   - Component & JSX.
-  - Tích hợp thư viện Bootstrap.
-  - `useState`, `useEffect` (Cơ bản).
+  - Cài đặt và sử dụng các component có sẵn của **React-Bootstrap**.
+  - Hook cơ bản: `useState`, `useEffect`.
   - Render List với `Array.map()`.
+  - Fetch dữ liệu cơ bản bằng thư viện `axios`.
 
-### 🚩 Module 2: Trạng thái UI & Kỹ thuật Map Dữ liệu
-*Trải nghiệm người dùng tốt hơn và kết nối các dữ liệu lại với nhau.*
-
-- **Mục tiêu:** 
-  - Hiển thị chữ "Đang tải..." khi API chưa trả về và "Lỗi" nếu server chết.
-  - Gọi thêm API Employees. Dùng ID của Quản lý ở bảng phòng ban để tìm Tên thật bên bảng Employees và hiển thị.
-- **Kiến thức cần học:**
-  - Conditional Rendering cơ bản (`if/else`, toán tử 3 ngôi).
-  - Xử lý mảng trong JavaScript (`find`, `filter`).
-  - Xử lý nhiều API tuần tự (hoặc `Promise.all`).
-
-### 🚩 Module 3: Tương tác sự kiện & Render có điều kiện
-*Thêm khả năng tương tác cơ bản: Bấm vào đâu là thông tin sổ ra đến đó.*
+### 🚩 Module 2: Trạng thái UI & Kỹ thuật Xử lý Mảng
+*Cải thiện UX và xử lý dữ liệu từ API.*
 
 - **Mục tiêu:** 
-  - Bấm nút **"View"** ở một phòng ban, hiện danh sách nhân viên dưới dạng **Accordion** (thả xuống).
-  - Ẩn/hiện thông tin "Người phụ thuộc" dựa trên dữ liệu.
+  - Quản lý trạng thái Loading và Error khi gọi API.
+  - Sử dụng các hàm xử lý mảng để tìm kiếm hoặc tính toán dữ liệu hiển thị.
 - **Kiến thức cần học:**
-  - Event Handling (`onClick`).
+  - Conditional Rendering (`if/else`, toán tử 3 ngôi `? :`, Logical AND `&&`).
+  - Các hàm xử lý mảng trong JavaScript (`find`, `filter`, `reduce`).
+  - Xử lý nhiều API bằng Promise hoặc Async/Await.
+
+### 🚩 Module 3: Tương tác sự kiện & Hook useMemo
+*Thêm khả năng tương tác cơ bản và tối ưu hiệu suất tính toán.*
+
+- **Mục tiêu:** 
+  - Bấm nút để hiển thị thông tin chi tiết (Ví dụ: Ẩn/hiện một Modal hoặc một khối thông tin).
+  - Tính toán dữ liệu phức tạp dựa trên dữ liệu lấy về mà không bị tính toán lại (re-render) không cần thiết.
+- **Kiến thức cần học:**
+  - Event Handling (`onClick`, `onChange`).
   - Lifting State Up & Props.
-  - Logical AND (`&&`) để ẩn/hiện element.
+  - Tối ưu hóa tính toán với `useMemo` Hook.
 
 ---
 
-## 🟡 PHẦN 2: XỬ LÝ LOGIC & ĐIỀU HƯỚNG (TRUNG BÌNH)
+## 🟡 PHẦN 2: XỬ LÝ LOGIC PHỨC TẠP & ĐIỀU HƯỚNG
 
-### 🚩 Module 4: Tính toán & Quản lý Form (Thủ công)
-*Làm quen với tính toán dữ liệu và cập nhật dữ liệu bằng thẻ HTML tiêu chuẩn.*
-
-- **Mục tiêu:** 
-  - Tính tổng lương dựa trên số giờ làm và lương cơ bản.
-  - Tạo Form "Thêm giờ làm" bằng thẻ `<input>`, `<select>`.
-  - Validate (bắt lỗi) thủ công bằng `if/else`.
-  - POST dữ liệu lên JSON-Server bằng `axios`.
-- **Kiến thức cần học:**
-  - `useMemo` Hook để tối ưu tính toán.
-  - Controlled Components (kết hợp `useState` và `onChange`).
-  - Form Submission (`onSubmit`, `e.preventDefault()`).
-
-### 🚩 Module 5: Custom Hooks & Axios Interceptors
-*Bắt đầu dọn dẹp code, làm cho file Component mỏng hơn.*
+### 🚩 Module 4: Quản lý State Phức tạp với useReducer & HTML5 Validation
+*Chuyển từ useState sang useReducer khi form/logic trở nên lớn và nhiều field.*
 
 - **Mục tiêu:** 
-  - Tách logic gọi API (`fetch`, `loading`, `error`) thành một hàm dùng chung.
-  - Tập trung mọi lỗi trả về từ API vào một chỗ để báo lỗi chung (VD: Hiện thông báo "Lỗi máy chủ").
+  - Xây dựng các form nhập liệu phức tạp (như trang Login, Thêm/Sửa thông tin).
+  - Tách logic cập nhật state ra khỏi component thông qua hàm Reducer.
+  - Xác thực dữ liệu (Validation) thủ công mà không dùng thư viện ngoài.
 - **Kiến thức cần học:**
-  - Tư duy viết Custom Hooks (`useFetch`).
-  - Khối `try...catch`.
-  - **Axios Interceptors**.
+  - Tư duy và cách sử dụng Hook `useReducer` (State, Dispatch, Action, Reducer function).
+  - Controlled Components (kết nối Form Control với State).
+  - Validate form sử dụng **HTML5 Validation API** (`required`, `checkValidity()`, `noValidate`) kết hợp với hàm JavaScript custom.
 
-### 🚩 Module 6: Kiến trúc Đa trang & Điều hướng
-*Chuyển từ một trang đơn thành hệ thống nhiều màn hình.*
+### 🚩 Module 5: Quản lý Global State với Context API & useReducer
+*Giải quyết bài toán truyền Props qua quá nhiều lớp Component (Props Drilling) và quản lý state chung cho toàn app.*
 
 - **Mục tiêu:** 
-  - Tách ứng dụng thành các trang riêng: `/dashboard`, `/departments`, `/employees`.
-  - Tạo một Layout chính (có Sidebar và Header).
+  - Quản lý trạng thái Đăng nhập (`isAuthenticated`, `user`) dùng chung cho mọi trang.
+  - Quản lý danh sách dữ liệu chính (như danh sách nhà hàng/thể loại) mà không cần gọi lại API nhiều lần.
 - **Kiến thức cần học:**
-  - React Router DOM (`BrowserRouter`, `Routes`, `Route`).
-  - Component Layout & `<Outlet>`.
-  - URL Parameters (`useParams`).
+  - Khởi tạo `createContext`, cung cấp dữ liệu qua `Provider` và lấy dữ liệu bằng `useContext`.
+  - Kết hợp **Context API** với **useReducer** để tạo ra kho lưu trữ State tập trung (tương tự như Redux nhưng nhẹ hơn và thuần React).
+
+### 🚩 Module 6: Kiến trúc Đa trang, Điều hướng & Bảo mật Route
+*Chuyển ứng dụng thành hệ thống nhiều màn hình và chặn người dùng vãng lai.*
+
+- **Mục tiêu:** 
+  - Tách ứng dụng thành các trang riêng biệt.
+  - Thiết lập một Layout chính chứa Header/Footer bao bọc các trang nội dung.
+  - Viết Component bảo vệ, tự động đẩy người dùng về trang Đăng nhập nếu chưa xác thực.
+- **Kiến thức cần học:**
+  - Sử dụng React Router DOM (`BrowserRouter`, `Routes`, `Route`).
+  - Kỹ thuật dùng Layout Component & thẻ `<Outlet>`.
+  - Lấy tham số từ URL với `useParams`, điều hướng bằng mã với `useNavigate`.
+  - Kỹ thuật viết **Protected Route** (Dựa vào state của Context API).
 
 ---
 
-## 🟠 PHẦN 3: CÔNG CỤ CHUYÊN NGHIỆP (KHÓ)
+## 🟣 PHẦN 3: ĐẢM BẢO CHẤT LƯỢNG (TESTING & QA)
+*Sau khi dự án đã thành hình, học cách kiểm thử code bằng test tự động (Automated Testing).*
 
-### 🚩 Module 7: Chuẩn hóa Form nhập liệu và Validate dữ liệu (Ứng dụng React Hook Form & Zod)
-*Dự án thực tế không ai quản lý từng ô input bằng useState. Đã đến lúc dùng công cụ chuẩn doanh nghiệp.*
-
-- **Mục tiêu:** 
-  - Xóa bỏ form thủ công ở Module 4. Viết lại form thêm giờ bằng thư viện.
-- **Kiến thức cần học:**
-  - **React Hook Form**: Quản lý form nhẹ, chống re-render.
-  - **Zod**: Viết Schema Validation tự động.
-
-### 🚩 Module 8: Cấu hình hệ thống linh hoạt và Giải quyết Props Drilling (Ứng dụng Context API)
-*Giải quyết bài toán truyền Props qua quá nhiều lớp Component (Props Drilling).*
+### 🚩 Module 7: Kiểm thử Component và Giao diện người dùng (RTL & Jest)
+*Đảm bảo giao diện phản hồi chính xác khi người dùng thao tác.*
 
 - **Mục tiêu:** 
-  - Lưu trữ Theme (Sáng/Tối) hoặc Ngôn ngữ (Vi/En) để dùng ở mọi nơi trong app.
+  - Viết test cho Component (Ví dụ: Khi nhập đúng username/password, form submit thành công).
+  - Kiểm tra xem dữ liệu hiển thị có đúng cấu trúc hay không.
 - **Kiến thức cần học:**
-  - `createContext`, `useContext`, Provider.
-
-### 🚩 Module 9: Xây dựng tính năng Danh sách chọn tạm thời (Ứng dụng Zustand)
-*Tìm kiếm một giải pháp thay thế linh hoạt và nhẹ nhàng hơn Context API.*
-
-- **Mục tiêu:** 
-  - Quản lý danh sách "Nhân viên đang chọn" (như tính năng Giỏ hàng) ở một kho lưu trữ bên ngoài.
-- **Kiến thức cần học:**
-  - **Zustand**: Khởi tạo Store, tạo Actions để cập nhật State.
-
-### 🚩 Module 10: Quy chuẩn hóa luồng dữ liệu đa tầng quy mô lớn (Ứng dụng Redux Toolkit)
-*Làm quen với công cụ State phổ biến nhất tại các công ty quy mô lớn.*
-
-- **Mục tiêu:** 
-  - Chuyển logic quản lý danh sách phòng ban phức tạp vào Redux.
-- **Kiến thức cần học:**
-  - **Redux Toolkit**: Slice, Dispatch, `useSelector`, Redux Thunk (tùy chọn).
-
----
-
-## 🔴 PHẦN 4: NÂNG CAO & BẢO MẬT (RẤT KHÓ)
-
-### 🚩 Module 11: Phân quyền truy cập và Bảo vệ giao diện nội bộ (Ứng dụng JWT & Private Routes)
-*Khóa cửa dự án, chỉ người có quyền mới được vào xem nội dung.*
-
-- **Mục tiêu:** 
-  - Tạo luồng Login, lưu mã phiên làm việc và bảo vệ các đường dẫn trang.
-- **Kiến thức cần học:**
-  - Luồng hoạt động của **JWT** (JSON Web Token).
-  - Lưu trữ `LocalStorage` an toàn.
-  - Private/Protected Routes (Component chặn cổng).
-
-### 🚩 Module 12: Xử lý Cache dữ liệu và Tự động đồng bộ trạng thái (Ứng dụng TanStack Query)
-*Xóa bỏ những file Custom Hook gọi API tự chế. Dùng công cụ Caching chuyên nghiệp.*
-
-- **Mục tiêu:** 
-  - Xóa `useFetch` ở Module 5. Thay thế toàn bộ luồng gọi API bằng TanStack Query.
-- **Kiến thức cần học:**
-  - **React Query** (TanStack Query).
-  - Quản lý Caching, Tự động Refetch, Mutation.
-
----
-
-## 🟣 PHẦN 5: ĐẢM BẢO CHẤT LƯỢNG (TESTING & QA)
-*Sau khi dự án đã thành hình, đây là lúc học cách bảo vệ code không bị "vỡ" khi có thay đổi mới.*
-
-### 🚩 Module 13: Bảo vệ độ chính xác của các Thuật toán nghiệp vụ (Ứng dụng Vitest)
-*Bắt đầu với việc kiểm thử các logic nhỏ nhất mà không màng tới giao diện.*
-
-- **Mục tiêu:** 
-  - Viết test cho hàm tính lương (dựa vào số giờ và mức lương). Đảm bảo kết quả toán học luôn đúng.
-  - Viết test cho Custom Hook `useFetch` (hoặc logic lấy dữ liệu).
-- **Kiến thức cần học:**
-  - Setup **Vitest** (khuyên dùng cùng Vite) hoặc **Jest**.
-  - Cú pháp cơ bản: `describe`, `it`, `expect`.
-  - Kỹ thuật **Mocking** (làm giả) kết quả trả về của API để không phụ thuộc vào server thật.
-
-### 🚩 Module 14: Ngăn chặn lỗi hiển thị và Tương tác UI vỡ khung (Ứng dụng React Testing Library)
-*Đảm bảo giao diện phản hồi đúng khi người dùng tương tác.*
-
-- **Mục tiêu:** 
-  - Test nút "View" ở trang danh sách: Bấm vào thì Accordion phải xổ xuống.
-  - Test form Thêm giờ làm: Nhập sai thông tin thì chữ báo lỗi màu đỏ phải hiện ra.
-- **Kiến thức cần học:**
-  - **React Testing Library** (RTL).
-  - Khái niệm Render ảo, tìm kiếm thẻ HTML qua `screen.getByRole`, `screen.getByText`.
-  - Giả lập hành vi người dùng bằng `userEvent` (click, gõ phím).
-
-### 🚩 Module 15: Giả lập kịch bản thao tác tự động của Người dùng (Ứng dụng Playwright)
-*Tự động hóa trình duyệt y như một người dùng thật đang thao tác.*
-
-- **Mục tiêu:** 
-  - Viết một kịch bản bot tự động mở trình duyệt, điền tài khoản, bấm Đăng nhập, chuyển sang trang Dashboard và kiểm tra xem có tên User trên thanh Header không.
-- **Kiến thức cần học:**
-  - **Playwright** (hoặc Cypress).
-  - Viết script điều hướng trang, trích xuất dữ liệu UI và Assertions (xác thực) trên trình duyệt thực tế.
-
----
-
-## 🔵 PHẦN 6: CHUẨN MỰC ENTERPRISE
-
-### 🚩 Module 16 (Mở rộng): Xóa bỏ rủi ro vỡ cấu trúc dữ liệu lúc Runtime (Ứng dụng TypeScript)
-*Mảnh ghép bắt buộc để dự án đạt chuẩn Enterprise.*
-
-- **Mục tiêu:** 
-  - Cập nhật toàn bộ codebase từ `.js` / `.jsx` sang `.ts` / `.tsx`.
-  - Cảnh báo lỗi cấu trúc dữ liệu ngay trong quá trình viết code.
-- **Kiến thức cần học:**
-  - Types & Interfaces trong TypeScript.
-  - Định nghĩa Type cho Props, State và API Response.
+  - Setup môi trường Test cơ bản với **Jest**.
+  - Sử dụng **React Testing Library** (RTL): Khái niệm Render ảo, tìm thẻ qua `screen.getByRole`, `screen.getByText`.
+  - Kỹ thuật Mocking (làm giả hàm gọi API hoặc làm giả Context provider) để test riêng rẽ Component.
 
 ---
 
 ## 💡 Lời khuyên dành cho bạn:
-- **Hãy đi từng bước nhỏ:** Lộ trình 16 Module nhìn thì dài, nhưng mỗi Module giải quyết một bài toán rất cụ thể. Không nhảy cóc!
-- **Đừng sợ lỗi:** Liên tục mở **React DevTools** và Tab **Network** để hiểu rõ luồng dữ liệu. Lỗi đỏ chót trên console là cơ hội học hỏi lớn nhất.
-- Khi làm đến Module 7 và 12, bạn sẽ tự mỉm cười nhận ra tại sao phải khổ sở tự code thủ công ở Module 4 và 5. Trải qua sự bất tiện giúp bạn trân trọng công cụ hiện đại!
+- **Tập trung vào Pattern của Dự án mẫu:** Dự án thi sử dụng thiết kế **Context + useReducer**, đây là phần quan trọng nhất bạn cần hiểu sâu thay vì cố học các thư viện State Management phức tạp bên ngoài.
+- **Nắm chắc React-Bootstrap:** Phần thi thiết kế giao diện sẽ dễ thở hơn rất nhiều nếu bạn thuộc cách dùng các Component cơ bản như `<Form.Control>`, `<Card>`, `<Modal>`, `<Row>`, `<Col>`.
+- **Liên tục thực hành Form và Validation:** Việc thao tác với dữ liệu (Thêm/Sửa) và bắt lỗi nhập liệu là kỹ năng bắt buộc phải làm trôi chảy. Dùng kỹ thuật HTML5 Validation như trong dự án mẫu sẽ giúp bạn code nhanh hơn.
