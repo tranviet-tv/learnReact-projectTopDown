@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Table, Button } from "react-bootstrap";
 
 export default function EmployeeList() {
     const [employees, setEmployees] = useState([]);
@@ -63,9 +64,9 @@ export default function EmployeeList() {
     return (
         <div>
             <h2>Danh sách nhân viên</h2>
-            <table className="table table-striped table-bordered">
-                <thead className="table-dark">
-                    <tr>
+            <Table striped bordered hover >
+                <thead>
+                    <tr className="table-dark">
                         <th>ID</th>
                         <th>Ten nhan vien</th>
                         <th>Gioi tinh</th>
@@ -81,12 +82,12 @@ export default function EmployeeList() {
                             <td>{employee.empGender}</td>
                             <td>{getDepartmentName(employee.depId)}</td>
                             <td>
-                                <button className="btn btn-primary">View</button>
+                                <Button variant="primary" size="sm">View</Button>
                             </td>
                         </tr>
                     )}
                 </tbody>
-            </table>
+            </Table>
         </div>
     )
 }
