@@ -2,40 +2,35 @@
 
 ## 🎯 DANH SÁCH MODULE (CHECKLIST)
 
-### 🟢 PHẦN 1: NỀN TẢNG CƠ BẢN (DỄ)
+### 🟢 PHẦN 1: NỀN TẢNG CƠ BẢN
 - [x] **Module 1: Khởi động, UI tĩnh & Fetch API đơn lẻ**
   - [x] Tổ chức kiến trúc dự án phân lớp cơ bản.
-  - [x] Dựng giao diện tĩnh (Table) bằng Bootstrap và CSS thuần.
-  - [x] Gọi API lấy danh sách phòng ban từ JSON-Server.
-- [x] **Module 2: Trạng thái UI & Kỹ thuật Map Dữ liệu**
-  - [x] Hiển thị chữ "Đang tải..." và "Lỗi".
-  - [x] Gọi API Employees và kết nối dữ liệu ID.
-- [ ] **Module 3: Tương tác sự kiện & Render có điều kiện**
-  - [ ] Xử lý nút "View" hiện danh sách thả xuống.
-  - [ ] Ẩn/hiện thông tin phụ thuộc theo dữ liệu.
+  - [x] Dựng giao diện tĩnh bằng React-Bootstrap.
+  - [x] Gọi API lấy danh sách dữ liệu từ JSON-Server.
+- [x] **Module 2: Trạng thái UI & Kỹ thuật Xử lý Mảng**
+  - [x] Quản lý trạng thái Loading và Error.
+  - [x] Xử lý mảng kết nối dữ liệu API (Employees & Departments).
+- [ ] **Module 3: Tương tác sự kiện & Hook useMemo**
+  - [ ] Bấm nút hiển thị thông tin chi tiết (nút View).
+  - [ ] Tối ưu hóa tính toán với useMemo.
 
-### 🟡 PHẦN 2: XỬ LÝ LOGIC & ĐIỀU HƯỚNG (TRUNG BÌNH)
-- [ ] **Module 4: Tính toán & Quản lý Form (Thủ công)**
-- [ ] **Module 5: Custom Hooks & Axios Interceptors**
-- [ ] **Module 6: Kiến trúc Đa trang & Điều hướng**
+### 🟡 PHẦN 2: XỬ LÝ LOGIC PHỨC TẠP & ĐIỀU HƯỚNG
+- [ ] **Module 4: Quản lý State Phức tạp với useReducer & HTML5 Validation**
+  - [ ] Xây dựng form nhập liệu (Thêm/Sửa/Login).
+  - [ ] Sử dụng useReducer quản lý state form.
+  - [ ] Xác thực dữ liệu với HTML5 Validation.
+- [ ] **Module 5: Quản lý Global State với Context API & useReducer**
+  - [ ] Quản lý trạng thái Đăng nhập.
+  - [ ] Quản lý dữ liệu dùng chung.
+- [ ] **Module 6: Kiến trúc Đa trang, Điều hướng & Bảo mật Route**
+  - [ ] Cài đặt React Router DOM, chia trang.
+  - [ ] Thiết lập Layout Component.
+  - [ ] Viết Protected Route bảo vệ trang.
 
-### 🟠 PHẦN 3: CÔNG CỤ CHUYÊN NGHIỆP (KHÓ)
-- [ ] **Module 7: Chuẩn hóa Form nhập liệu (React Hook Form & Zod)**
-- [ ] **Module 8: Cấu hình hệ thống linh hoạt (Context API)**
-- [ ] **Module 9: Danh sách chọn tạm thời (Zustand)**
-- [ ] **Module 10: Quy chuẩn hóa luồng dữ liệu (Redux Toolkit)**
-
-### 🔴 PHẦN 4: NÂNG CAO & BẢO MẬT (RẤT KHÓ)
-- [ ] **Module 11: Phân quyền truy cập (JWT & Private Routes)**
-- [ ] **Module 12: Xử lý Cache dữ liệu (TanStack Query)**
-
-### 🟣 PHẦN 5: ĐẢM BẢO CHẤT LƯỢNG (TESTING & QA)
-- [ ] **Module 13: Test thuật toán (Vitest)**
-- [ ] **Module 14: Test UI/UX (React Testing Library)**
-- [ ] **Module 15: Automation Test (Playwright)**
-
-### 🔵 PHẦN 6: CHUẨN MỰC ENTERPRISE
-- [ ] **Module 16: TypeScript**
+### 🟣 PHẦN 3: ĐẢM BẢO CHẤT LƯỢNG (TESTING & QA)
+- [ ] **Module 7: Kiểm thử Component và Giao diện người dùng (RTL & Jest)**
+  - [ ] Setup môi trường Test cơ bản với Jest.
+  - [ ] Viết test tương tác giao diện (React Testing Library).
 
 ---
 
