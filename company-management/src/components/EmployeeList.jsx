@@ -7,6 +7,7 @@ export default function EmployeeList() {
     const [departments, setDepartments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [selectEmpId, setSelectEmpId] = useState(null);
 
     //cách 1: gọi đơn lẻ từng fetch API
     //  useEffect(() => {
@@ -76,15 +77,32 @@ export default function EmployeeList() {
                 </thead>
                 <tbody>
                     {employees.map(employee =>
-                        <tr key={employee.id}>
-                            <td>{employee.id}</td>
-                            <td>{employee.empName?.firstName + ' ' + employee.empName?.lastName}</td>
-                            <td>{employee.empGender}</td>
-                            <td>{getDepartmentName(employee.depId)}</td>
-                            <td>
-                                <Button variant="primary" size="sm">View</Button>
-                            </td>
-                        </tr>
+                        <>
+                            <tr key={employee.id}>
+                                <td>{employee.id}</td>
+                                <td>{employee.empName?.firstName + ' ' + employee.empName?.lastName}</td>
+                                <td>{employee.empGender}</td>
+                                <td>{getDepartmentName(employee.depId)}</td>
+                                <td>
+                                    <Button variant="primary" size="sm" onClick={() => setSelectEmpId(employee.id)}>View</Button>
+                                </td>
+                            </tr>
+                            {selectEmpId === employee.id && (
+                                <tr>
+                                    <td>ID:</td>
+                                    <td>{employee.id}</td>
+                                    <td>
+                                        {employee.dependents.map((dependent, index) => (
+                                            <div key={index}>
+                                                <p>Name: {dependent.fullName}</p>
+                                                <p>Birth Date: {dependent.birthDate}</p>
+                                                <p>Relationship: {dependent.relationship}</p>
+                                            </div>
+                                        ))}
+                                    </td>
+                                </tr>
+                            )}
+                        </>
                     )}
                 </tbody>
             </Table>

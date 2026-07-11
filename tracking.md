@@ -98,3 +98,12 @@
   - Chủ động áp dụng các class CSS (`table-striped`, `table-dark`, `btn-primary`) để giao diện chuyên nghiệp hơn.
   - Hiểu được bài toán quản lý trạng thái trong danh sách: Cần một state lưu ID (`selectedEmpId`) thay vì cờ boolean thông thường để xác định chính xác dòng nào đang được tương tác.
 - **Next up:** Tiếp tục Module 3: Gắn sự kiện `onClick` cho nút View, cập nhật state `selectedEmpId` và hiển thị danh sách người phụ thuộc thả xuống.
+
+### 07/07/2026
+- **Task hoàn thành:** Tối ưu hóa API (Promise.all + Axios) & Tích hợp React-Bootstrap Components (Hoàn thành Module 1 & 2).
+- **Key Takeaways/Bug fixes:**
+  - Phát hiện và xử lý lỗi "chớp" dữ liệu do Race Condition khi gọi nhiều API.
+  - Ứng dụng `Promise.all` đồng bộ hoá thời gian chờ của nhiều API.
+  - Phân biệt rõ thư viện `axios` và cú pháp `async/await` trong việc xử lý bất đồng bộ.
+  - Nắm được cú pháp `import { Table, Button } from 'react-bootstrap'` để sử dụng UI Component chuẩn React thay cho thẻ HTML thuần, thiết kế chuyên nghiệp hơn.
+- **Next up:** Bắt đầu Module 3: Gắn sự kiện `onClick` cho nút View, tạo state `selectedEmpId` và dùng Conditional Rendering để ẩn/hiện danh sách người phụ thuộc của nhân viên.
