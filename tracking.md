@@ -10,9 +10,9 @@
 - [x] **Module 2: Trạng thái UI & Kỹ thuật Xử lý Mảng**
   - [x] Quản lý trạng thái Loading và Error.
   - [x] Xử lý mảng kết nối dữ liệu API (Employees & Departments).
-- [ ] **Module 3: Tương tác sự kiện & Hook useMemo**
+- [x] **Module 3: Tương tác sự kiện & Hook useMemo**
   - [x] Bấm nút hiển thị thông tin chi tiết (nút View).
-  - [ ] Tối ưu hóa tính toán với useMemo.
+  - [x] Tối ưu hóa tính toán với useMemo.
 
 ### 🟡 PHẦN 2: XỬ LÝ LOGIC PHỨC TẠP & ĐIỀU HƯỚNG
 - [ ] **Module 4: Quản lý State Phức tạp với useReducer & HTML5 Validation**
@@ -115,3 +115,10 @@
   - Phân biệt được sự khác nhau giữa thẻ viết tắt `<></>` và `<React.Fragment>`. Biết cách dùng `<React.Fragment>` để truyền thuộc tính `key` khi render mảng.
   - Sử dụng thuộc tính `colSpan` để gộp cột trong HTML Table, giúp giao diện không bị vỡ.
 - **Next up:** Tối ưu hóa tính toán (tính tổng số người phụ thuộc) với Hook `useMemo` (Module 3).
+
+### 13/07/2026 (Hoàn thành Module 3)
+- **Task hoàn thành:** Tối ưu hóa tính toán (tính tổng số người phụ thuộc) với Hook `useMemo`.
+- **Key Takeaways/Bug fixes:**
+  - Hiểu cách dùng hàm `reduce()` để gom mảng dữ liệu thành một giá trị duy nhất (tính tổng).
+  - Giải quyết lỗi vi phạm **"Rules of Hooks"** (Rendered more hooks than during the previous render): Hiểu được nguyên tắc tuyệt đối không gọi Hook ở bên dưới câu lệnh `return` (Early Return) để tránh việc thứ tự gọi Hook bị thay đổi giữa các lần render.
+- **Next up:** (Bắt đầu Phần 2 - Module 4) Xây dựng Form nhập liệu và quản lý state phức tạp với `useReducer`.

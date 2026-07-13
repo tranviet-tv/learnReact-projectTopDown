@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 import React from 'react';
@@ -54,18 +54,24 @@ export default function EmployeeList() {
         fetchData()
     }, []);
 
-    if (isLoading) return <p className="text-info">Loading employees...</p>
-    if (error) return <p className="text-danger">Error: {error}</p>
-
     const getDepartmentName = (depId) => {
         const department = departments.find(dep => dep.id == depId)
         return department ? department.depName : 'Not found'
     }
 
+    const totalDependents = useMemo(() => {
+        return employees.reduce((totalDependent, employee) => {
+            totalDependent += employee.dependents.length
+            return totalDependent
+        }, 0)
+    }, [employees])
 
+    if (isLoading) return <p className="text-info">Loading employees...</p>
+    if (error) return <p className="text-danger">Error: {error}</p>
     return (
         <div>
             <h2>Danh sách nhân viên</h2>
+            <h5>Tổng số người phụ thuộc: {totalDependents}</h5>
             <Table striped bordered hover >
                 <thead>
                     <tr className="table-dark">
