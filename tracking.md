@@ -11,7 +11,7 @@
   - [x] Quản lý trạng thái Loading và Error.
   - [x] Xử lý mảng kết nối dữ liệu API (Employees & Departments).
 - [ ] **Module 3: Tương tác sự kiện & Hook useMemo**
-  - [ ] Bấm nút hiển thị thông tin chi tiết (nút View).
+  - [x] Bấm nút hiển thị thông tin chi tiết (nút View).
   - [ ] Tối ưu hóa tính toán với useMemo.
 
 ### 🟡 PHẦN 2: XỬ LÝ LOGIC PHỨC TẠP & ĐIỀU HƯỚNG
@@ -106,4 +106,12 @@
   - Ứng dụng `Promise.all` đồng bộ hoá thời gian chờ của nhiều API.
   - Phân biệt rõ thư viện `axios` và cú pháp `async/await` trong việc xử lý bất đồng bộ.
   - Nắm được cú pháp `import { Table, Button } from 'react-bootstrap'` để sử dụng UI Component chuẩn React thay cho thẻ HTML thuần, thiết kế chuyên nghiệp hơn.
-- **Next up:** Bắt đầu Module 3: Gắn sự kiện `onClick` cho nút View, tạo state `selectedEmpId` và dùng Conditional Rendering để ẩn/hiện danh sách người phụ thuộc của nhân viên.
+  - Cập nhật state `selectedEmpId` và dùng Conditional Rendering để ẩn/hiện danh sách người phụ thuộc của nhân viên.
+
+### 13/07/2026
+- **Task hoàn thành:** Hiển thị thông tin chi tiết (Toggle View) và tối ưu giao diện Table/Fragment.
+- **Key Takeaways/Bug fixes:**
+  - Hiểu cách viết logic ẩn/hiện (Toggle State) bằng toán tử 3 ngôi trong hàm onClick.
+  - Phân biệt được sự khác nhau giữa thẻ viết tắt `<></>` và `<React.Fragment>`. Biết cách dùng `<React.Fragment>` để truyền thuộc tính `key` khi render mảng.
+  - Sử dụng thuộc tính `colSpan` để gộp cột trong HTML Table, giúp giao diện không bị vỡ.
+- **Next up:** Tối ưu hóa tính toán (tính tổng số người phụ thuộc) với Hook `useMemo` (Module 3).
