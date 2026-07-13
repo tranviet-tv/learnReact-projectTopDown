@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
+import React from 'react';
 
 export default function EmployeeList() {
     const [employees, setEmployees] = useState([]);
@@ -77,21 +78,23 @@ export default function EmployeeList() {
                 </thead>
                 <tbody>
                     {employees.map(employee =>
-                        <>
-                            <tr key={employee.id}>
+                        <React.Fragment key={employee.id}>
+                            <tr>
                                 <td>{employee.id}</td>
                                 <td>{employee.empName?.firstName + ' ' + employee.empName?.lastName}</td>
                                 <td>{employee.empGender}</td>
                                 <td>{getDepartmentName(employee.depId)}</td>
                                 <td>
-                                    <Button variant="primary" size="sm" onClick={() => setSelectEmpId(employee.id)}>View</Button>
+                                    <Button variant="primary" size="sm" onClick={() => setSelectEmpId(selectEmpId === employee.id ? null : employee.id)}>
+                                        {selectEmpId === employee.id ? 'Hide' : 'View'}
+                                    </Button>
                                 </td>
                             </tr>
                             {selectEmpId === employee.id && (
                                 <tr>
                                     <td>ID:</td>
                                     <td>{employee.id}</td>
-                                    <td>
+                                    <td colSpan={3}>
                                         {employee.dependents.map((dependent, index) => (
                                             <div key={index}>
                                                 <p>Name: {dependent.fullName}</p>
@@ -102,7 +105,7 @@ export default function EmployeeList() {
                                     </td>
                                 </tr>
                             )}
-                        </>
+                        </React.Fragment>
                     )}
                 </tbody>
             </Table>
