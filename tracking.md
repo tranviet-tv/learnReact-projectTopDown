@@ -156,3 +156,9 @@
   - Phân biệt rõ Default Export (không dùng ngoặc nhọn khi import) và Named Export (bắt buộc dùng ngoặc nhọn).
   - Khắc phục lỗi trùng lặp tên biến (Identifier has already been declared) khi bóc tách dữ liệu từ Context trùng tên với state nội bộ của Component.
 - **Next up:** Bắt đầu Module 6: Cài đặt thư viện React Router DOM để chia ứng dụng thành nhiều trang riêng biệt.
+
+### 14/07/2026 (Khởi tạo React Router DOM)
+- **Task hoàn thành:** Cài đặt thư viện `react-router-dom` và bọc `<BrowserRouter>` vào ứng dụng để chuẩn bị cho việc chia trang.
+- **Key Takeaways/Bug fixes:**
+  - Nắm được cách cài đặt thư viện bằng NPM và cách thiết lập `BrowserRouter` ở cấp độ cao nhất (bọc bên ngoài các Provider) để kích hoạt cơ chế Routing cho toàn ứng dụng.
+- **Next up:** (Module 6) Phân tách Layout và thiết lập các `Routes`, `Route` cho trang Login, trang Danh sách và trang Thêm mới nhân viên.
