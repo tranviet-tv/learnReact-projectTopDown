@@ -21,7 +21,7 @@
   - [x] Xác thực dữ liệu với HTML5 Validation.
 - [ ] **Module 5: Quản lý Global State với Context API & useReducer**
   - [ ] Quản lý trạng thái Đăng nhập.
-  - [ ] Quản lý dữ liệu dùng chung.
+  - [x] Quản lý dữ liệu dùng chung.
 - [ ] **Module 6: Kiến trúc Đa trang, Điều hướng & Bảo mật Route**
   - [ ] Cài đặt React Router DOM, chia trang.
   - [ ] Thiết lập Layout Component.
@@ -131,3 +131,12 @@
   - Hiểu nguyên lý làm việc với Form trong React: Dùng `e.target` để lấy giá trị động, `e.preventDefault()` để chặn hành vi reload trang.
   - Vận dụng thành công `noValidate`, `validated` state và `checkValidity()` để tắt popup mặc định trình duyệt và thay thế bằng giao diện cảnh báo lỗi đỏ xịn sò của React-Bootstrap.
 - **Next up:** Gửi dữ liệu Form (POST request) lên JSON-Server để lưu nhân viên mới vào Database.
+
+### 14/07/2026 (Tiếp tục)
+- **Task hoàn thành:** Áp dụng Context API để quản lý Global State và gọi API POST thêm mới dữ liệu.
+- **Key Takeaways/Bug fixes:**
+  - Hiểu sâu sắc sự khác biệt giữa truyền tham chiếu hàm (Callback) `() => {}` và gọi hàm trực tiếp `()` trong `.then()`.
+  - Nhận thức được tầm quan trọng của Data Transfer Object (DTO) khi dữ liệu UI (Form) và dữ liệu API (Database) không cùng cấu trúc.
+  - Giải quyết bài toán "Props Drilling" và "F5 thủ công" bằng cách chuyển State lên **Context API (Trụ sở chính)** và dùng `useContext` để lấy State + hàm `setEmployees` xuống các Component con.
+  - Biết cách giải quyết bẫy "mất gói hàng" khi nối (chaining) nhiều `.then()` trong axios.
+- **Next up:** Hoàn thiện nốt Form bằng cách lấy mảng `departments` từ Context để tạo một Select Box chọn phòng ban thật, thay vì hardcode `depId: 2`.

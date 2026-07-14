@@ -158,6 +158,36 @@
           "relationship": "Wife"
         }
       ]
+    },
+    {
+      "empName": {
+        "firstName": "Duc Viet",
+        "lastName": "Học Giỏi"
+      },
+      "empGender": "Male",
+      "depId": 2,
+      "dependents": [],
+      "id": "xQ-1JHR5hZ8"
+    },
+    {
+      "empName": {
+        "firstName": "Pham Thanh",
+        "lastName": "Vu"
+      },
+      "empGender": "Male",
+      "depId": 2,
+      "dependents": [],
+      "id": "-gdhwq2tTAQ"
+    },
+    {
+      "empName": {
+        "firstName": "Pham Thanh",
+        "lastName": "Hải"
+      },
+      "empGender": "Male",
+      "depId": 2,
+      "dependents": [],
+      "id": "nWS4P9RdhHw"
     }
   ],
   "projects": [
@@ -224,5 +254,6 @@
       "empId": 2,
       "workHours": 20
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

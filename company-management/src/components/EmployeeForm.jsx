@@ -1,13 +1,18 @@
 import { Form, Button } from 'react-bootstrap';
-import { useEffect, useReducer, useState } from 'react';
+import { useReducer, useState, useContext } from 'react';
+import axios from 'axios';
+import { EmployeeContext } from "../context/EmployeeContext";
 
 export default function EmployeeForm() {
+
+    const { setEmployees } = useContext(EmployeeContext);
 
     const initialFormState = {
         firstName: '',
         lastName: '',
         gender: 'Male',
-        department: ''
+        department: '',
+        dependents: []
     }
 
     const [validated, setValidated] = useState(false);
@@ -22,7 +27,6 @@ export default function EmployeeForm() {
 
             case 'HANDLE_SUBMIT':
                 return initialFormState;
-
             default:
                 return state
         }
@@ -44,8 +48,25 @@ export default function EmployeeForm() {
             // Tạm thời chỉ in ra console, không submit
             return;
         }
+        const newEmployee = {
+            empName: {
+                firstName: formState.firstName,
+                lastName: formState.lastName
+            },
+            empGender: formState.gender,
+            depId: 2, // Tạm thời hardcode số 2 (phòng IT), sau này chúng ta sẽ làm Select Box để chọn phòng ban thật sau.
+            dependents: []
+        }
         console.log("Form hợp lệ, tiến hành submit!");
-        dispatch({ type: 'HANDLE_SUBMIT' })
+        axios.post('http://localhost:8000/employees', newEmployee)
+            .then((response) => {
+                const createdEmployee = response.data;
+                console.log(createdEmployee);
+                setEmployees(prevEmployees => [...prevEmployees, createdEmployee])
+                dispatch({ type: 'HANDLE_SUBMIT' });
+                setValidated(false);
+            })
+            .catch(err => console.log(err))
     }
 
     return (
