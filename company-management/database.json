@@ -188,6 +188,16 @@
       "depId": 2,
       "dependents": [],
       "id": "nWS4P9RdhHw"
+    },
+    {
+      "empName": {
+        "firstName": "Chi Chi",
+        "lastName": "Học Giỏi"
+      },
+      "empGender": "Male",
+      "depId": 1,
+      "dependents": [],
+      "id": "33ad_GrsSgU"
     }
   ],
   "projects": [

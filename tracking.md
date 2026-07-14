@@ -140,3 +140,11 @@
   - Giải quyết bài toán "Props Drilling" và "F5 thủ công" bằng cách chuyển State lên **Context API (Trụ sở chính)** và dùng `useContext` để lấy State + hàm `setEmployees` xuống các Component con.
   - Biết cách giải quyết bẫy "mất gói hàng" khi nối (chaining) nhiều `.then()` trong axios.
 - **Next up:** Hoàn thiện nốt Form bằng cách lấy mảng `departments` từ Context để tạo một Select Box chọn phòng ban thật, thay vì hardcode `depId: 2`.
+
+### 14/07/2026 (Hoàn thành Form)
+- **Task hoàn thành:** Hoàn thiện Select Box chọn phòng ban và lấy dữ liệu động từ Context API.
+- **Key Takeaways/Bug fixes:**
+  - Biết cách sử dụng `.map()` để render danh sách `<option>` tự động dựa vào mảng `departments`.
+  - Lấy thành công `departments` từ `EmployeeContext` để sử dụng.
+  - *Lưu ý ôn tập:* Các thẻ Select của HTML mặc định trả về kiểu chuỗi (String). Khi cần ID dạng số để gửi cho API, phải ép kiểu thành số. Và luôn cần một option mặc định rỗng `<option value="">` kết hợp thuộc tính `required` để bắt validation chính xác.
+- **Next up:** Bắt đầu phần quản lý trạng thái Đăng nhập với Context API (Tiếp tục Module 5).

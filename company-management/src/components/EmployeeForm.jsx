@@ -5,7 +5,7 @@ import { EmployeeContext } from "../context/EmployeeContext";
 
 export default function EmployeeForm() {
 
-    const { setEmployees } = useContext(EmployeeContext);
+    const { setEmployees, departments } = useContext(EmployeeContext);
 
     const initialFormState = {
         firstName: '',
@@ -54,7 +54,7 @@ export default function EmployeeForm() {
                 lastName: formState.lastName
             },
             empGender: formState.gender,
-            depId: 2, // Tạm thời hardcode số 2 (phòng IT), sau này chúng ta sẽ làm Select Box để chọn phòng ban thật sau.
+            depId: Number(formState.department),
             dependents: []
         }
         console.log("Form hợp lệ, tiến hành submit!");
@@ -104,7 +104,21 @@ export default function EmployeeForm() {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Department</Form.Label>
-                    <Form.Control name='department' value={formState.department} onChange={handleChange} type='text' placeholder='Enter department....' />
+                    <Form.Select
+                        name='department'
+                        value={formState.department}
+                        onChange={handleChange}
+                        required>
+                        <option value="">-- Chọn phòng ban --</option>
+                        {departments.map((dep) =>
+                            <option value={dep.id} key={dep.id}>
+                                {dep.depName}
+                            </option>
+                        )}
+                    </Form.Select>
+                    <Form.Control.Feedback type='invalid'>
+                        Vui lòng chọn Department!
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Button variant='primary' type='submit'>Thêm nhân viên</Button>
             </Form>
