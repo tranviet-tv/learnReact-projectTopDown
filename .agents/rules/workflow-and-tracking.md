@@ -20,7 +20,7 @@ Yêu cầu người dùng gửi lại đoạn code đã sửa. Chỉ xác nhận
 
 Update Tracking (Cập nhật File Tiến độ):
 
-Khi nhiệm vụ (bao gồm cả việc fix bug) đã đạt chuẩn, AI tự động tạo một đoạn nội dung Markdown để người dùng cập nhật vào file tracking.md.
+Khi nhiệm vụ (bao gồm cả việc fix bug) đã đạt chuẩn, AI tự động tạo một đoạn nội dung Markdown và tự động cập nhật vào file tracking.md đồng thời hiển thị ra ở khung chat để người dùng biết về đoạn nhật ký học tập đó.
 
 Format cập nhật bắt buộc:
 

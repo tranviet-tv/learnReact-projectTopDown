@@ -15,10 +15,10 @@
   - [x] Tối ưu hóa tính toán với useMemo.
 
 ### 🟡 PHẦN 2: XỬ LÝ LOGIC PHỨC TẠP & ĐIỀU HƯỚNG
-- [ ] **Module 4: Quản lý State Phức tạp với useReducer & HTML5 Validation**
-  - [ ] Xây dựng form nhập liệu (Thêm/Sửa/Login).
-  - [ ] Sử dụng useReducer quản lý state form.
-  - [ ] Xác thực dữ liệu với HTML5 Validation.
+- [x] **Module 4: Quản lý State Phức tạp với useReducer & HTML5 Validation**
+  - [x] Xây dựng form nhập liệu (Thêm/Sửa/Login).
+  - [x] Sử dụng useReducer quản lý state form.
+  - [x] Xác thực dữ liệu với HTML5 Validation.
 - [ ] **Module 5: Quản lý Global State với Context API & useReducer**
   - [ ] Quản lý trạng thái Đăng nhập.
   - [ ] Quản lý dữ liệu dùng chung.
@@ -122,3 +122,12 @@
   - Hiểu cách dùng hàm `reduce()` để gom mảng dữ liệu thành một giá trị duy nhất (tính tổng).
   - Giải quyết lỗi vi phạm **"Rules of Hooks"** (Rendered more hooks than during the previous render): Hiểu được nguyên tắc tuyệt đối không gọi Hook ở bên dưới câu lệnh `return` (Early Return) để tránh việc thứ tự gọi Hook bị thay đổi giữa các lần render.
 - **Next up:** (Bắt đầu Phần 2 - Module 4) Xây dựng Form nhập liệu và quản lý state phức tạp với `useReducer`.
+
+### 14/07/2026
+- **Task hoàn thành:** Xây dựng Form nhập liệu, quản lý state bằng useReducer & Validate giao diện với HTML5 + Bootstrap (Hoàn thành Module 4).
+- **Key Takeaways/Bug fixes:**
+  - Hiểu cách setup npm script để chạy đồng thời cả 2 server (`npm run dev` và `npm run server`) bằng thư viện `concurrently`.
+  - Nắm được lỗi `ReferenceError: Cannot access ... before initialization` do bản chất Hoisting của Arrow function, khác với từ khóa `function`.
+  - Hiểu nguyên lý làm việc với Form trong React: Dùng `e.target` để lấy giá trị động, `e.preventDefault()` để chặn hành vi reload trang.
+  - Vận dụng thành công `noValidate`, `validated` state và `checkValidity()` để tắt popup mặc định trình duyệt và thay thế bằng giao diện cảnh báo lỗi đỏ xịn sò của React-Bootstrap.
+- **Next up:** Gửi dữ liệu Form (POST request) lên JSON-Server để lưu nhân viên mới vào Database.
