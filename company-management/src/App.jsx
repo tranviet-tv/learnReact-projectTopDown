@@ -1,17 +1,16 @@
-import DepartmentList from "./components/DepartmentList";
-import EmployeeForm from "./components/EmployeeForm";
-import EmployeeList from "./components/EmployeeList";
 import { EmployeeProvider } from "./context/EmployeeContext";
+import { AuthProvider } from "./context/AuthContext";
+import AppLayout from "./components/AppLayout";
 
 export default function App() {
     return (
         <>
-            <EmployeeProvider>
-                <h1>Quản lý công ty</h1>
-                <DepartmentList />
-                <EmployeeForm />
-                <EmployeeList />
-            </EmployeeProvider>
+            <AuthProvider>
+                <EmployeeProvider>
+                    <h1>Quản lý công ty</h1>
+                    <AppLayout />
+                </EmployeeProvider>
+            </AuthProvider >
         </>
     )
 }

@@ -19,8 +19,8 @@
   - [x] Xây dựng form nhập liệu (Thêm/Sửa/Login).
   - [x] Sử dụng useReducer quản lý state form.
   - [x] Xác thực dữ liệu với HTML5 Validation.
-- [ ] **Module 5: Quản lý Global State với Context API & useReducer**
-  - [ ] Quản lý trạng thái Đăng nhập.
+- [x] **Module 5: Quản lý Global State với Context API & useReducer**
+  - [x] Quản lý trạng thái Đăng nhập.
   - [x] Quản lý dữ liệu dùng chung.
 - [ ] **Module 6: Kiến trúc Đa trang, Điều hướng & Bảo mật Route**
   - [ ] Cài đặt React Router DOM, chia trang.
@@ -148,3 +148,11 @@
   - Lấy thành công `departments` từ `EmployeeContext` để sử dụng.
   - *Lưu ý ôn tập:* Các thẻ Select của HTML mặc định trả về kiểu chuỗi (String). Khi cần ID dạng số để gửi cho API, phải ép kiểu thành số. Và luôn cần một option mặc định rỗng `<option value="">` kết hợp thuộc tính `required` để bắt validation chính xác.
 - **Next up:** Bắt đầu phần quản lý trạng thái Đăng nhập với Context API (Tiếp tục Module 5).
+
+### 14/07/2026 (Quản lý trạng thái Đăng nhập - AuthContext)
+- **Task hoàn thành:** Thiết lập Context quản lý Đăng nhập (`AuthContext`) và cấu trúc lại Layout để Conditional Rendering.
+- **Key Takeaways/Bug fixes:**
+  - Hiểu sâu sắc quy tắc cốt lõi: Không thể gọi `useContext` ngay tại Component đang render ra thẻ `Provider` của Context đó. Phải tách Layout ra component con (`AppLayout.jsx`).
+  - Phân biệt rõ Default Export (không dùng ngoặc nhọn khi import) và Named Export (bắt buộc dùng ngoặc nhọn).
+  - Khắc phục lỗi trùng lặp tên biến (Identifier has already been declared) khi bóc tách dữ liệu từ Context trùng tên với state nội bộ của Component.
+- **Next up:** Bắt đầu Module 6: Cài đặt thư viện React Router DOM để chia ứng dụng thành nhiều trang riêng biệt.
