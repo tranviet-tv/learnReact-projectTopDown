@@ -22,10 +22,10 @@
 - [x] **Module 5: Quản lý Global State với Context API & useReducer**
   - [x] Quản lý trạng thái Đăng nhập.
   - [x] Quản lý dữ liệu dùng chung.
-- [ ] **Module 6: Kiến trúc Đa trang, Điều hướng & Bảo mật Route**
-  - [ ] Cài đặt React Router DOM, chia trang.
-  - [ ] Thiết lập Layout Component.
-  - [ ] Viết Protected Route bảo vệ trang.
+- [x] **Module 6: Kiến trúc Đa trang, Điều hướng & Bảo mật Route**
+  - [x] Cài đặt React Router DOM, chia trang.
+  - [x] Thiết lập Layout Component.
+  - [x] Viết Protected Route bảo vệ trang.
 
 ### 🟣 PHẦN 3: ĐẢM BẢO CHẤT LƯỢNG (TESTING & QA)
 - [ ] **Module 7: Kiểm thử Component và Giao diện người dùng (RTL & Jest)**
@@ -162,3 +162,31 @@
 - **Key Takeaways/Bug fixes:**
   - Nắm được cách cài đặt thư viện bằng NPM và cách thiết lập `BrowserRouter` ở cấp độ cao nhất (bọc bên ngoài các Provider) để kích hoạt cơ chế Routing cho toàn ứng dụng.
 - **Next up:** (Module 6) Phân tách Layout và thiết lập các `Routes`, `Route` cho trang Login, trang Danh sách và trang Thêm mới nhân viên.
+
+### 15/07/2026 (Thiết lập Routes)
+- **Task hoàn thành:** Thiết lập `Routes` và `Route` để chia ứng dụng thành các trang (Login, Danh sách, Thêm mới).
+- **Key Takeaways/Bug fixes:**
+  - Nắm được cách sử dụng `<Routes>` và `<Route>` thay thế cho cơ chế Conditional Rendering (if/else) trước đây.
+  - Hiểu cách ánh xạ đường dẫn URL (`path`) tới Component tương ứng (`element`).
+- **Next up:** Thiết lập `AppLayout` sử dụng `<Outlet>` để bao bọc các trang con và tạo phần giao diện dùng chung.
+
+### 15/07/2026 (Thiết lập Layout)
+- **Task hoàn thành:** Thiết lập `AppLayout` sử dụng `<Outlet>`.
+- **Key Takeaways/Bug fixes:**
+  - Nắm được khái niệm **Layout Route** trong React Router: Sử dụng một Component cha chứa `<Outlet />` để render giao diện dùng chung (như Header, Menu) mà không bị mất đi khi chuyển đổi giữa các trang con.
+- **Next up:** Bổ sung thanh điều hướng (Navigation) bằng component `<Link>` và hoàn thiện cơ chế Bảo mật (Protected Route) để khóa trang nội bộ.
+
+### 15/07/2026 (Bổ sung Navigation)
+- **Task hoàn thành:** Sử dụng `<Link>` để điều hướng nội bộ.
+- **Key Takeaways/Bug fixes:**
+  - Tuyệt đối không dùng `<a href>` trong React Router để tránh bị reload lại toàn bộ trang (mất state).
+  - Sử dụng `<Link to="...">` để tận dụng cơ chế Client-side Routing, giúp ứng dụng chuyển trang tức thì mượt mà như một ứng dụng gốc (Native app).
+- **Next up:** Viết logic "Protected Route" (Bảo vệ tuyến đường) để đẩy người dùng vãng lai về trang Login nếu chưa đăng nhập.
+
+### 15/07/2026 (Hoàn thành Module 6 - Protected Route)
+- **Task hoàn thành:** Triển khai Protected Route trong `AppLayout`.
+- **Key Takeaways/Bug fixes:**
+  - Hiểu cách bảo vệ các Route bằng cách bọc chúng trong một component kiểm tra quyền.
+  - Vận dụng thành thạo component `<Navigate>` để tự động chuyển hướng thay vì gọi hàm `useNavigate` trong lúc render.
+  - Hiểu ý nghĩa của thuộc tính `replace` giúp thay thế lịch sử trang hiện tại, tránh tình trạng lỗi vòng lặp khi nhấn phím Back.
+- **Next up:** Bắt đầu Module 7 (Phần 3) - Cài đặt môi trường kiểm thử (Testing) cơ bản với Jest và React Testing Library.
