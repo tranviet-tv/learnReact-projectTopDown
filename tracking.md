@@ -28,9 +28,9 @@
   - [x] Viết Protected Route bảo vệ trang.
 
 ### 🟣 PHẦN 3: ĐẢM BẢO CHẤT LƯỢNG (TESTING & QA)
-- [ ] **Module 7: Kiểm thử Component và Giao diện người dùng (RTL & Jest)**
-  - [ ] Setup môi trường Test cơ bản với Jest.
-  - [ ] Viết test tương tác giao diện (React Testing Library).
+- [x] **Module 7: Kiểm thử Component và Giao diện người dùng (RTL & Jest)**
+  - [x] Setup môi trường Test cơ bản với Jest.
+  - [x] Viết test tương tác giao diện (React Testing Library).
 
 ---
 
@@ -190,3 +190,25 @@
   - Vận dụng thành thạo component `<Navigate>` để tự động chuyển hướng thay vì gọi hàm `useNavigate` trong lúc render.
   - Hiểu ý nghĩa của thuộc tính `replace` giúp thay thế lịch sử trang hiện tại, tránh tình trạng lỗi vòng lặp khi nhấn phím Back.
 - **Next up:** Bắt đầu Module 7 (Phần 3) - Cài đặt môi trường kiểm thử (Testing) cơ bản với Jest và React Testing Library.
+
+### 15/07/2026 (Cấu hình môi trường Test)
+- **Task hoàn thành:** Cài đặt và cấu hình **Vitest** cùng **React Testing Library**.
+- **Key Takeaways/Bug fixes:**
+  - Nắm được cách thiết lập `vitest` trong file `vite.config.js` thay vì dùng Jest thuần, giúp tận dụng tốc độ và sự tương thích của hệ sinh thái Vite.
+  - Hiểu vai trò của `jsdom` (môi trường trình duyệt ảo) và `setupTests.js` (nạp các hàm tiện ích kiểm tra giao diện).
+- **Next up:** Viết file test đầu tiên cho component `Login.jsx` để kiểm tra khả năng hiển thị giao diện.
+
+### 15/07/2026 (Viết bài Test Giao diện đầu tiên)
+- **Task hoàn thành:** Viết bài test giao diện cơ bản bằng React Testing Library cho `Login.jsx`.
+- **Key Takeaways/Bug fixes:**
+  - Nắm vững khái niệm **Mocking Context**: Cần bọc Component vào trong `<AuthContext.Provider>` với các giá trị giả (`vi.fn()`) để tránh lỗi `undefined` khi test các component sử dụng `useContext`.
+  - Làm quen với các hàm truy vấn DOM như `screen.getByRole` và `screen.getByLabelText` cùng hàm xác nhận `expect().toBeInTheDocument()`.
+- **Next up:** Tiếp tục Module 7 - Viết Test mô phỏng hành động tương tác của người dùng (nhập liệu, bấm nút) và kiểm tra Logic xử lý.
+
+### 16/07/2026 (Hoàn thành Module 7 - Test tương tác)
+- **Task hoàn thành:** Viết Test mô phỏng hành động tương tác của người dùng (nhập liệu, bấm nút) và kiểm tra Logic xử lý.
+- **Key Takeaways/Bug fixes:**
+  - Hiểu sâu bản chất `fireEvent.change`, cách tự "nặn" ra Event object (tham số `{ target: { value, name } }`) để lừa component rằng sự kiện đến từ trình duyệt thật.
+  - Nắm được cách dùng `fireEvent.click` để giả lập hành động nhấp chuột.
+  - Biết cách kết hợp mô phỏng tương tác với hàm Mock (`vi.fn()`) để xác nhận luồng dữ liệu chạy chính xác.
+- **Next up:** Tổng kết dự án, ôn tập lại luồng data flow và refactor code nếu cần.
