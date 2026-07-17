@@ -1,9 +1,11 @@
 import { Form, Button } from "react-bootstrap";
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 export default function Login() {
 
+    const navigate = useNavigate()
     const { setIsAuthenticated, setUser } = useContext(AuthContext)
     const [loginData, setLoginData] = useState({ userName: '', password: '' })
     const [validated, setValidated] = useState(false)
@@ -18,6 +20,7 @@ export default function Login() {
         setValidated(true)
         setIsAuthenticated(true)
         setUser({ useName: loginData.userName })
+        navigate('/')
     }
 
     return (
